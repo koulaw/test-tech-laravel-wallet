@@ -67,3 +67,8 @@ test('cannot send money to a friend with insufficient balance', function () {
         ->assertSessionHas('money-sent-recipient-name', $recipient->name)
         ->assertSessionHas('money-sent-amount', 10_00);
 });
+
+test('dashboard is display when no transaction exist', function () {
+    $user = User::factory()->has(Wallet::factory())->create();
+    $response = actingAs($user)->get('/')->assertOk();
+});

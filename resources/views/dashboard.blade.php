@@ -72,6 +72,7 @@
                     </div>
                 </form>
             </div>
+            @if(count($transactions) > 0)
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-5">
                 <h2 class="text-xl font-bold mb-6">@lang('Transactions history')</h2>
                 <table class="w-full text-sm text-left text-gray-500 border border-gray-200">
@@ -128,6 +129,7 @@
                     </tbody>
                 </table>
             </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
