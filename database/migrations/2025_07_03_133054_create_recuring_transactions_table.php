@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('reason');
             $table->integer('frequency')->unsigned();
             $table->dateTime('start_date');
-            $table->string('recipient_email');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->dateTime('end_date')->nullable();
             $table->integer('amount')->unsigned();
             $table->timestamps();
